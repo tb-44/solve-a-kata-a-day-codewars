@@ -1,0 +1,1 @@
+# solve-a-kata-a-day-codewars
