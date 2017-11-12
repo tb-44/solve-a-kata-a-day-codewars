@@ -34,10 +34,14 @@ function pitchClass(note){
       }
       
       switch(note.charAt(1)){
-        case '#':      value += 1;break;
-        case 'b':      value -= 1;break;
-        case '' :      value;     break;
-        default :      return null;
+        case '#': value += 1;
+        break;
+        case 'b': value -= 1;
+        break;
+        case '' : value;     
+        break;
+        default :   
+        return null;
       }
       
       if(value > 11)  {
