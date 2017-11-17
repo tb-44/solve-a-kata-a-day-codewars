@@ -13,7 +13,7 @@
 
 function newAvg(arr, newavg) {
     let newArr = arr.length;
-    let total = newavg * (n + 1);
+    let total = newavg * (newArr + 1);
     let current_total = 0;
     let i = 0;
 
@@ -28,3 +28,19 @@ function newAvg(arr, newavg) {
         throw new RangeError();
     }
 }
+
+//other's solutions:
+
+var newAvg = (arr, newavg) => {
+    if ((arr.reduce((a,b)=>a+b,0) / arr.length) > newavg) {
+      throw Error();
+    } else {
+      return Math.ceil(newavg * (arr.length+1) - arr.reduce((a,b)=>a+b,0));
+    }
+  }
+
+  function newAvg(arr, newavg){
+    const x = newavg * (arr.length + 1) - arr.reduce((a,b) => a + b,0)
+    if(x <= 0) throw 'ValueError'
+    return Math.ceil(x)
+  }
