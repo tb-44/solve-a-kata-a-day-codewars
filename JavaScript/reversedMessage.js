@@ -9,7 +9,7 @@ function reverseMessage(str) {
     reverseArr = reverseArr.join('').split(' ');
     let arr = [];
 
-    for (var i = 0; i < reverseArr.length; i++) {
+    for (let i = 0; i < reverseArr.length; i++) {
         let capFirst = reverseArr[i].charAt(0).toUpperCase();
         let word = reverseArr[i].slice(1);
         arr[i] = capFirst + word;
