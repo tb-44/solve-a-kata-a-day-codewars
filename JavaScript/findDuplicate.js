@@ -8,7 +8,7 @@
 var findDup = function (arr) {
     let i = 0;
     let result = [];
-    var maximum = Math.max.apply(Math, arr);
+    let maximum = Math.max.apply(Math, arr);
 
     while (i < maximum) {
         result.push(0);
