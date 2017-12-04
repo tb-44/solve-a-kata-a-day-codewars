@@ -37,3 +37,14 @@ function tops(msg) {
     }
     return tops.split('').reverse().join('');
 }
+
+function tops(msg) {
+    if (!msg) return '';
+    var ct = 1, df = 5, res = '';
+    while (ct < msg.length) {
+        res += msg[ct];
+        ct += df;
+        df += 4;
+    }
+    return res.split('').reverse().join('');
+}
