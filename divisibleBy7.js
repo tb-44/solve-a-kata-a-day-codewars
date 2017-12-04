@@ -7,6 +7,9 @@
 //solution
 function seven(m) {
     var count = 0;
+    if (m === undefined) {
+        return m = 0;
+    }
     while (m > 99) {
         var div = m % 10;
         m = (m - div) / 10 - (2 * div);
