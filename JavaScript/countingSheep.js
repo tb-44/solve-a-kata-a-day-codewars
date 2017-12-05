@@ -26,3 +26,5 @@ function countSheeps(arrayOfSheep) {
 
     return num;
 }
+
+let countSheeps = x => x.filter( s => s ).length;
