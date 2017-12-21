@@ -23,7 +23,7 @@ public class CompoundArray {
     
 		return result;
 	}
-}Ï
+};
 
 //other's
 public class CompoundArray {
@@ -40,7 +40,7 @@ public class CompoundArray {
     }
         return output;
     }
-}Ï
+};
 
 public class CompoundArray {
     
@@ -52,4 +52,4 @@ public class CompoundArray {
         }
         return result;
     }
-}Ï
+};
