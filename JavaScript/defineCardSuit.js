@@ -54,3 +54,7 @@ const defineSuit = card => {
         default: return 'hearts';
     }
 }
+
+function defineSuit(card) {
+    return ["clubs", "diamonds", "hearts", "spades"][Math.floor(deck.indexOf(card) / 13)]
+}
