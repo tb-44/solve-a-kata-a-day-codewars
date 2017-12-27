@@ -15,8 +15,8 @@
 
 //solution
 function halfLife(quantityInitial, quantityRemaining, time) {
-    var q = quantityRemaining / quantityInitial;
-    var n = Math.log(q) / Math.log(0.5)
+    let q = quantityRemaining / quantityInitial;
+    let n = Math.log(q) / Math.log(0.5)
     return time / n
 }
 
