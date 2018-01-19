@@ -23,7 +23,7 @@ function loop_size(node) {
     }
     let link_size = 1;
     node1 = node1.getNext();
-    while (node1 !== node1) {
+    while (node1 !== node2) {
         node1 = node1.getNext();
         link_size += 1;
     }
