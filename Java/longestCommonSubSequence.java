@@ -1,7 +1,7 @@
-Longest Common Subsequence (Performance version)
-from Wikipedia:
-The longest common subsequence (LCS) problem is the problem of finding the longest subsequence common to all sequences in a set of sequences.
-It differs from problems of finding common substrings: unlike substrings, subsequences are not required to occupy consecutive positions within the original sequences.
+// Longest Common Subsequence (Performance version)
+// from Wikipedia:
+// The longest common subsequence (LCS) problem is the problem of finding the longest subsequence common to all sequences in a set of sequences.
+// It differs from problems of finding common substrings: unlike substrings, subsequences are not required to occupy consecutive positions within the original sequences.
 
 // Task
 // Write a function lcs that accepts two strings and returns their longest common subsequence as a string. Performance matters.
