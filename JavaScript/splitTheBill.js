@@ -19,3 +19,19 @@
 
 // splitTheBill(group) // returns {A: 5, B: 0, C: -5}
 
+function splitTheBill(x) {
+    let totalAmount = 0;
+    let owed = {};
+
+    for (let i in x) {
+        totalAmount += x[i];
+    }
+
+    let each = totalAmount / Object.keys(x).length;
+
+    for (let i in x) {
+        owed[i] = parseFloat((x[i] - each).toFixed(2));
+    }
+
+    return owed;
+}
