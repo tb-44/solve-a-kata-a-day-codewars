@@ -14,7 +14,7 @@ function high(x) {
     let highestScore = "";
 
     for (let i = 0; i < allWords.length; i++) {
-        let score = words[i];
+        let score = allWords[i];
         let val = 0;
 
         for (let j = 0; j < score.length; j++) {
