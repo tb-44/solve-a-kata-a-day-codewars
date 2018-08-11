@@ -22,7 +22,7 @@ function incrementOne(str) {
         return str.substr(0, begin - 1) + 1;
     if (String(+end + 1).length > end.length)
         return str.substr(0, begin - 1) + (+end + 1);
-        
+
     return str.substr(0, begin) + (+end + 1);
 }
 
@@ -30,4 +30,15 @@ function incrementString(str) {
     if (!/[\d]+/.test(str))
         return str + "1";
     return str.replace(/[\d]+/, incrementOne);
+}
+
+//others
+function incrementString(strng) {
+    return strng.replace(/\d+|$/, m => {
+        if (!m) return '1';
+
+        let s = '' + (Number(m) + 1);
+        while (s.length < m.length) s = '0' + s;
+        return s;
+    });
 }
