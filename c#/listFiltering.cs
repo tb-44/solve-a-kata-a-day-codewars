@@ -14,7 +14,6 @@ public class ListFilterer
 {
    public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
    {
-      int num = 0;
       var aList = new List<int>();
 
       foreach (var item in listOfItems)
