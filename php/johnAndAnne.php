@@ -11,7 +11,7 @@ On day n the number of katas done by Ann should be n minus the number of katas d
 On day n the number of katas done by John should be n minus the number of katas done by Ann at day t, t being equal to the number of katas done by John himself at day n - 1.
 
 Whoops! I think they need to lay out a little clearer exactly what there're getting themselves into! -->
-
+<?php
 function johnAnn($n)
 {
     $johns = array(0);
@@ -25,7 +25,7 @@ function johnAnn($n)
         $a1 = $anns[$j];
         array_push($johns, $i - $a1);
         $a = $anns[$i - 1];
-        $j1 = $johns$a];
+        $j1 = $johns[$a];
         array_push($anns, $i - $j1);
         $i++;
     }

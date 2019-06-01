@@ -32,7 +32,7 @@ For Go: nil slice is expected when there are no gap between m and n. Example: ga
 #Ref https://en.wikipedia.org/wiki/Prime_gap --> 
 
 
-
+<?php
 function gap($g, $m, $n)
 {
     $lastPrime = 2;
@@ -67,68 +67,68 @@ function isPrime($num)
 }
 
 //others
-function gap($g, $m, $n) {
-    $prime = false;
+// function gap($g, $m, $n) {
+//     $prime = false;
     
-    for($i = $m; $i<$n; $i++){
-      $isPrime = isPrime($i);
-      if($isPrime && $prime && $i-$prime == $g){
-        return [$prime, $i];
-      }
-      if($isPrime){
-         $prime = $i;
-      }
+//     for($i = $m; $i<$n; $i++){
+//       $isPrime = isPrime($i);
+//       if($isPrime && $prime && $i-$prime == $g){
+//         return [$prime, $i];
+//       }
+//       if($isPrime){
+//          $prime = $i;
+//       }
           
-    }
-  return null;
-}
+//     }
+//   return null;
+// }
 
-function isPrime($number)
-{
-  for ($i=2; $i<=sqrt($number); $i++){
-    if($number % $i ==0){
-      return false;
-    }
-  }
-  return true;
-}
+// function isPrime($number)
+// {
+//   for ($i=2; $i<=sqrt($number); $i++){
+//     if($number % $i ==0){
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
-function isPrime(int $n)
-{
-    $max = (int) ceil($n**0.5);
+// function isPrime(int $n)
+// {
+//     $max = (int) ceil($n**0.5);
     
-    for ($i = 3; $i <= $max; ++$i) {
-        if ($n % $i === 0) {
-            return false;
-        }
-    }
+//     for ($i = 3; $i <= $max; ++$i) {
+//         if ($n % $i === 0) {
+//             return false;
+//         }
+//     }
 
-    return true;
-}
+//     return true;
+// }
 
-function gap(int $g, int $m, int $n)
-{
-    if (!($m & 1)) {
-        ++$m;
-    }
+// function gap(int $g, int $m, int $n)
+// {
+//     if (!($m & 1)) {
+//         ++$m;
+//     }
     
-    $prevPrime = null;
+//     $prevPrime = null;
 
-    while ($m <= $n) {
-        if (isPrime($m)) {
-            if ($prevPrime === null) {
-                $prevPrime = $m;
-            } else {
-                if ($m - $prevPrime === $g) {
-                    return [$prevPrime, $m];
-                } else {
-                    $prevPrime = $m;
-                }
-            }
-        }
+//     while ($m <= $n) {
+//         if (isPrime($m)) {
+//             if ($prevPrime === null) {
+//                 $prevPrime = $m;
+//             } else {
+//                 if ($m - $prevPrime === $g) {
+//                     return [$prevPrime, $m];
+//                 } else {
+//                     $prevPrime = $m;
+//                 }
+//             }
+//         }
 
-        $m += 2;
-    }
+//         $m += 2;
+//     }
     
-    return null;
-}
+//     return null;
+// }

@@ -8,6 +8,7 @@
 // Also, if somebody is giving you a non-positive distance, it's clearly bogus and you should yell at them by returning null (or whatever equivalent in your language).
 
 //solution
+<?php
 function fold_to($distance) {
     $num = 0.0001;
     $result = 0;
@@ -19,22 +20,22 @@ function fold_to($distance) {
 }
 
 //others
-function fold_to($n) {
-    return $n > 0 ? max(0, ceil(log(1e4 * $n, 2))) : NULL;
-}
+// function fold_to($n) {
+//     return $n > 0 ? max(0, ceil(log(1e4 * $n, 2))) : NULL;
+// }
 
-function fold_to($distance) {
-    if ($distance <= 0) {
-        return null;
-    }
+// function fold_to($distance) {
+//     if ($distance <= 0) {
+//         return null;
+//     }
 
-    $i = 0;
-    $paper = 0.0001;
+//     $i = 0;
+//     $paper = 0.0001;
 
-    do {
-        $paper += $paper;
-        $i++;
-    } while ($paper < $distance);
+//     do {
+//         $paper += $paper;
+//         $i++;
+//     } while ($paper < $distance);
 
-    return $i;
-}
+//     return $i;
+// }

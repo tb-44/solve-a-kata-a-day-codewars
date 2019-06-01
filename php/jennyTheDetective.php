@@ -9,6 +9,7 @@
 // Example: input: [5, 0, 3], "I Love You" output: "ivy" (0 = "i", 3 = "v", 5 = "y")
 
 //php solution
+<?php
 function missing($nums, $str) {
     $result = "";
     sort($nums);
@@ -23,24 +24,24 @@ function missing($nums, $str) {
 }
 
 //others 
-function missing($nums, $str) {
-    sort($nums);
-    $c = str_split(str_replace(' ', '', strtolower($str)));
-    return max($nums) > count($c) ? 'No mission today' : implode('', array_map(function ($n) use($c) { return $c[$n]; }, $nums));
-}
+// function missing($nums, $str) {
+//     sort($nums);
+//     $c = str_split(str_replace(' ', '', strtolower($str)));
+//     return max($nums) > count($c) ? 'No mission today' : implode('', array_map(function ($n) use($c) { return $c[$n]; }, $nums));
+// }
 
-function missing($nums, $str) {
-    $str = str_replace(' ', '', strtolower($str));
-    asort($nums);
-    $return = "";
+// function missing($nums, $str) {
+//     $str = str_replace(' ', '', strtolower($str));
+//     asort($nums);
+//     $return = "";
 
-    if (max($nums) <= strlen($str)) {
-        foreach($nums as $letter => $key) {
-            $return.= substr($str, $key, 1);
-        }
-    } else {
-        $return = "No mission today";
-    }
+//     if (max($nums) <= strlen($str)) {
+//         foreach($nums as $letter => $key) {
+//             $return.= substr($str, $key, 1);
+//         }
+//     } else {
+//         $return = "No mission today";
+//     }
 
-    return $return;
-}
+//     return $return;
+// }

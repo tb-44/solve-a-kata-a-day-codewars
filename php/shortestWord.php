@@ -2,7 +2,7 @@
 
 String will never be empty and you do not need to account for different data types. -->
 
-
+<?php
 function findShort(string $str){
   $lengths = array_map('strlen', explode(' ', $str));
   return min($lengths);
