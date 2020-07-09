@@ -26,10 +26,10 @@
 // 14  23  22  21  8    
 // 13  12  11  10  9
 
-public class TheClockwiseSpiral {
+public class ClockwiseSpiral {
 
-    public static int[][] createSpiral(int N) {
-        if (N < 1) {
+	public static int[][] createSpiral(int N) {
+		if (N < 1) {
 			return new int[0][0];
 		}
 
@@ -65,5 +65,5 @@ public class TheClockwiseSpiral {
 		}
 
 		return clockSpiral;
-    }
+	}
 }

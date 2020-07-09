@@ -7,17 +7,17 @@
 // NOTE: All numbers will be whole numbers greater than 0.
 
 // If you liked this kata, check out part 2!!
-public class Kata {
+public class ExpandedForm {
 
     public static String expandedForm(int num) {
         return expandedForm(num, 0, 10);
     }
-    
+
     public static String expandedForm(int num, int mod, int exp) {
-        if (num == 0) return "";
+        if (num == 0)
+            return "";
         mod = num % exp;
-        return expandedForm(num - mod, mod, exp * 10) + 
-                ((mod > 0) ? ((exp < num) ? " + " : "") + mod : "");
+        return expandedForm(num - mod, mod, exp * 10) + ((mod > 0) ? ((exp < num) ? " + " : "") + mod : "");
     }
-    
+
 }

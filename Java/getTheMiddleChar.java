@@ -12,31 +12,15 @@
 // #Output
 // The middle character(s) of the word represented as a string.
 
-
 //solution
-class Kata {
+public class GetTheMiddleChar {
   public static String getMiddle(String word) {
-	  if (word.length() == 1 || word.length() == 2)
-		  return word;
-	  if (word.length() % 2 == 0) {
-		  return "" + word.charAt((int) word.length()/2 - 1) + word.charAt((int) word.length()/2);
-	  } else {
-		  return "" + word.charAt((int) word.length()/2);
-	  } 
-  }
-}
-
-//others
-class Kata {
-    public static String getMiddle(String word) {
-        int length = word.length();
-        return (length % 2 != 0) ?  String.valueOf(word.charAt(length / 2)) : word.substring(length / 2 - 1, length / 2 + 1);
+    if (word.length() == 1 || word.length() == 2)
+      return word;
+    if (word.length() % 2 == 0) {
+      return "" + word.charAt((int) word.length() / 2 - 1) + word.charAt((int) word.length() / 2);
+    } else {
+      return "" + word.charAt((int) word.length() / 2);
     }
-}
-
-class Kata {
-  public static String getMiddle(String word) {
-    return word.substring((int) Math.ceil(word.length() / 2.0) - 1, (int) Math.floor(word.length() / 2.0) + 1);
   }
 }
-  

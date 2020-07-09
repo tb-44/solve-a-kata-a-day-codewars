@@ -55,38 +55,39 @@ public class BraceChecker {
 	}
 }
 
-//others
+// others
 import java.util.Stack;
 
 public class BraceChecker {
-  
-  public boolean isValid(String braces) {
-    Stack<Character> s = new Stack<>();
-    for (char c : braces.toCharArray()) 
-      if (s.size() > 0 && isClosing(s.peek(), c)) s.pop(); 
-      else s.push(c);
-    return s.size() == 0;
-  }
-  
-  public boolean isClosing(char x, char c) {
-    return (x == '{' && c == '}') || (x == '(' && c == ')') || (x == '[' && c == ']');
-  }
-  
+
+	public boolean isValid(String braces) {
+		Stack<Character> s = new Stack<>();
+		for (char c : braces.toCharArray())
+			if (s.size() > 0 && isClosing(s.peek(), c))
+				s.pop();
+			else
+				s.push(c);
+		return s.size() == 0;
+	}
+
+	public boolean isClosing(char x, char c) {
+		return (x == '{' && c == '}') || (x == '(' && c == ')') || (x == '[' && c == ']');
+	}
+
 }
 
 public class BraceChecker {
 
-  public boolean isValid(String braces) { 
-    String b = braces;
-    System.out.println(braces);   
-    for(int i=0;i<braces.length()/2;i++)
-    {
-      b = b.replaceAll("\\(\\)", "");
-      b = b.replaceAll("\\[\\]", "");
-      b = b.replaceAll("\\{\\}", "");
-      if(b.length() == 0)
-        return true;
-    }
-    return false;
-  }
+	public boolean isValid(String braces) {
+		String b = braces;
+		System.out.println(braces);
+		for (int i = 0; i < braces.length() / 2; i++) {
+			b = b.replaceAll("\\(\\)", "");
+			b = b.replaceAll("\\[\\]", "");
+			b = b.replaceAll("\\{\\}", "");
+			if (b.length() == 0)
+				return true;
+		}
+		return false;
+	}
 }

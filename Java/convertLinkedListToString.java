@@ -51,17 +51,16 @@
 
 // For the simplicity of this Kata, you may assume that any Node in this Kata may only contain non-negative integer values. For example, you will not encounter a Node whose data/$data/Data property is "Hello World".
 
-
-public class Kata {
+public class ConvertLinkedListToString {
 
   public static String stringify(Node list) {
-      String str = "";
-      while (list != null) {
-         str = str + String.valueOf(list.getData());
-         str = str + " -> ";
-         list = list.getNext();
-      }
-        str = str + "null";
-        return str;
+    String str = "";
+    while (list != null) {
+      str = str + String.valueOf(list.getData());
+      str = str + " -> ";
+      list = list.getNext();
+    }
+    str = str + "null";
+    return str;
   }
 }

@@ -6,15 +6,13 @@
 // If there are less than 2 blue beads return 0.
 
 public class BeadsCounter {
-    public static int countRedBeads(final int nBlue) {
-      int n;
-      if (nBlue < 2) {
-        return 0;
-      }
-      else {
-        n = 2 * nBlue - 2;
-      }
-      return n;
+  public static int countRedBeads(final int nBlue) {
+    int n;
+    if (nBlue < 2) {
+      return 0;
+    } else {
+      n = 2 * nBlue - 2;
     }
+    return n;
+  }
 }
-

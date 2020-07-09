@@ -14,15 +14,17 @@
 import java.util.Arrays;
 
 public class FindOutlier {
-    
+
 	static int find(int[] integers) {
 		int out = 0;
 
 		int[] even = Arrays.stream(integers).filter(x -> (x & 1) == 0).toArray();
-		if (even.length==1) out = even[0]; 
+		if (even.length == 1)
+			out = even[0];
 
 		int[] odd = Arrays.stream(integers).filter(x -> (x & 1) != 0).toArray();
-		if (odd.length==1) out = odd[0];
+		if (odd.length == 1)
+			out = odd[0];
 
 		return out;
 	}

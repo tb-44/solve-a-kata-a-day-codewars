@@ -18,21 +18,22 @@
 
 import java.util.Stack;
 
-public class Groups{
+public class CheckingGroups {
 
-  public static boolean groupCheck(String s){
+  public static boolean groupCheck(String s) {
     Stack<Character> stack = new Stack<Character>();
     try {
-      for(char c:s.toCharArray()) {
-        if (c == '(') 
+      for (char c : s.toCharArray()) {
+        if (c == '(')
           stack.push(')');
         else if (c == '[')
           stack.push(']');
         else if (c == '{')
           stack.push('}');
-        else if ( c == ')' || c == ']' || c == '}') {
+        else if (c == ')' || c == ']' || c == '}') {
           char top = stack.pop();
-          if (top != c) return false;
+          if (top != c)
+            return false;
         }
       }
     } catch (Exception e) {
@@ -40,5 +41,5 @@ public class Groups{
     }
     return stack.empty();
   }
- 
+
 }

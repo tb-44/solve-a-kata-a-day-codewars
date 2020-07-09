@@ -7,7 +7,6 @@
 
 // Input: 1254859723 Output: 9875543221
 
-
 import java.util.Arrays;
 
 public class DescendingOrder {
