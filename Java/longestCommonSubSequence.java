@@ -24,7 +24,7 @@
 // lcs( string0, string1 ) === lcs( string1, string0 )
 // Wikipedia has an article that may be helpful.
 
-class Lcs {
+public class LongestCommonSubSequence {
 
 	public static String lcs(String a, String b) {
        int aString = a.length();

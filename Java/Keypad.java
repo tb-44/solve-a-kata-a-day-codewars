@@ -29,27 +29,15 @@
 //solution
 public class Keypad {
 	public static int presses(String phrase) {
-		char[][] keypad = {
-				{'1'},                 {'A','B','C','2'}, {'D','E','F','3'},
-				{'G','H','I','4'},     {'J','K','L','5'}, {'M','N','O','6'},
-				{'P','Q','R','S','7'}, {'T','U','V','8'}, {'W','X','Y','Z','9'},
-				{'*'},                 {' ', '0'},        {'#'}
-		};
-		char[][] keypad2 = {
-				{'1', 'A', 'D', 'G', 'J', 'M', 'P', 'T', 'W', '*', ' ', '#'},
-				{'B', 'E', 'H', 'K', 'N', 'Q', 'U', 'X', '0'},
-				{'C', 'F', 'I', 'L', 'O', 'R', 'V', 'Y'},
-				{'2', '3', '4', '5', '6', 'S', '8', 'Z'},
-				{'7', '9'}
-		};
+		char[][] keypad = { { '1' }, { 'A', 'B', 'C', '2' }, { 'D', 'E', 'F', '3' }, { 'G', 'H', 'I', '4' },
+				{ 'J', 'K', 'L', '5' }, { 'M', 'N', 'O', '6' }, { 'P', 'Q', 'R', 'S', '7' }, { 'T', 'U', 'V', '8' },
+				{ 'W', 'X', 'Y', 'Z', '9' }, { '*' }, { ' ', '0' }, { '#' } };
 
-		String[] keypad3 = {
-				"1ADGJMPTW* #",
-				"BEHKNQUX0",
-				"CFILORVY",
-				"23456S8Z",
-				"79"
-		};
+		char[][] keypad2 = { { '1', 'A', 'D', 'G', 'J', 'M', 'P', 'T', 'W', '*', ' ', '#' },
+				{ 'B', 'E', 'H', 'K', 'N', 'Q', 'U', 'X', '0' }, { 'C', 'F', 'I', 'L', 'O', 'R', 'V', 'Y' },
+				{ '2', '3', '4', '5', '6', 'S', '8', 'Z' }, { '7', '9' } };
+
+		String[] keypad3 = { "1ADGJMPTW* #", "BEHKNQUX0", "CFILORVY", "23456S8Z", "79" };
 
 		int result = 0;
 		String[] phraser = phrase.toUpperCase().split("");
@@ -63,45 +51,3 @@ public class Keypad {
 		return result;
 	}
 }
-
-//others
-public class Keypad {
-  static String[] keys = {"1", "ABC2", "DEF3", "GHI4", "JKL5", "MNO6", "PQRS7", "TUV8", "WXYZ9", "*", " 0", "#"};
-  
-  public static int presses(String phrase) {
-    int nPresses = 0;
-    
-    for (char c : phrase.toUpperCase().toCharArray())
-      for (String s : keys)
-          nPresses += s.indexOf(c) + 1;
-    return nPresses;
-  }
-}
-
-public class Keypad {
-  private final static String[] KEYS = new String[] {
-    "1", "ABC2", "DEF3", "GHI4", "JKL5", "MNO6", "PQRS7", "TUV8", "WXYZ9", "*", " 0", "#"
-  };
-  
-  private static int lookup(char c) {
-    for (String key : KEYS) {
-      for (int i = 0; i < key.length(); i++) {
-        if (key.charAt(i) == c) {
-          return i + 1;
-        }
-      }
-    }
-    return 0;
-  }
-  
-  public static int presses(String phrase) {
-    int result = 0;
-    phrase = phrase.toUpperCase();
-    for (char c : phrase.toCharArray()) {
-      // System.out.println("c: " + c);
-      result += lookup(c);
-    }
-    return result;
-  }
-}
-
