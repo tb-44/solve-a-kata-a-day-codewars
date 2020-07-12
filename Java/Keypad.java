@@ -26,16 +26,19 @@
 
 // Hint: While it wouldn't take too long to hard code the amount of keypresses for all 26 letters by hand, try to avoid doing so! (Imagine you work at a phone manufacturer who might be testing out different keyboard layouts, and you want to be able to test new ones rapidly.)
 
-//solution
 public class Keypad {
 	public static int presses(String phrase) {
-		char[][] keypad = { { '1' }, { 'A', 'B', 'C', '2' }, { 'D', 'E', 'F', '3' }, { 'G', 'H', 'I', '4' },
-				{ 'J', 'K', 'L', '5' }, { 'M', 'N', 'O', '6' }, { 'P', 'Q', 'R', 'S', '7' }, { 'T', 'U', 'V', '8' },
-				{ 'W', 'X', 'Y', 'Z', '9' }, { '*' }, { ' ', '0' }, { '#' } };
+		// char[][] keypad = { { '1' }, { 'A', 'B', 'C', '2' }, { 'D', 'E', 'F', '3' },
+		// { 'G', 'H', 'I', '4' },
+		// { 'J', 'K', 'L', '5' }, { 'M', 'N', 'O', '6' }, { 'P', 'Q', 'R', 'S', '7' },
+		// { 'T', 'U', 'V', '8' },
+		// { 'W', 'X', 'Y', 'Z', '9' }, { '*' }, { ' ', '0' }, { '#' } };
 
-		char[][] keypad2 = { { '1', 'A', 'D', 'G', 'J', 'M', 'P', 'T', 'W', '*', ' ', '#' },
-				{ 'B', 'E', 'H', 'K', 'N', 'Q', 'U', 'X', '0' }, { 'C', 'F', 'I', 'L', 'O', 'R', 'V', 'Y' },
-				{ '2', '3', '4', '5', '6', 'S', '8', 'Z' }, { '7', '9' } };
+		// char[][] keypad2 = { { '1', 'A', 'D', 'G', 'J', 'M', 'P', 'T', 'W', '*', ' ',
+		// '#' },
+		// { 'B', 'E', 'H', 'K', 'N', 'Q', 'U', 'X', '0' }, { 'C', 'F', 'I', 'L', 'O',
+		// 'R', 'V', 'Y' },
+		// { '2', '3', '4', '5', '6', 'S', '8', 'Z' }, { '7', '9' } };
 
 		String[] keypad3 = { "1ADGJMPTW* #", "BEHKNQUX0", "CFILORVY", "23456S8Z", "79" };
 

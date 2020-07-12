@@ -11,7 +11,6 @@
 //   Let T be the Tax Rate = 0.18      
 //   Let D be the Desired Sum = 1100.00
 
-
 // After 1st Year -->
 //   P = 1041.00
 // After 2nd Year -->
@@ -24,44 +23,15 @@
 
 // Assumptions : Assume that Desired Principal 'D' is always greater than the initial principal, however it is best to take into consideration that if the Desired Principal 'D' is equal to Principal 'P' this should return 0 Years.
 
-//solutions
-public class Money {
-	public static int calculateYears(double principal, double interest, double tax, double desired) {
-		int y = 0;
-		while (principal < desired) {
-			double gain = principal * interest;
-			double taxes = gain * tax;
-			principal += gain - taxes;
-			y++;
-		}
-		return y;
-	}
-}
-
-//others
-public class Money {
-  public static int calculateYears(double principal, double interest,  double tax, double desired) {            
-    return (int) Math.ceil(Math.log(desired / principal) / Math.log(1 + interest * (1 - tax)));
-  }
-}
-
 public class Money {
   public static int calculateYears(double principal, double interest, double tax, double desired) {
-    double currentAmount = principal;
-    int years = 0;
-
-    while (currentAmount < desired) {
-      currentAmount = currentAmount + interestPostTaxes(currentAmount, interest, tax);
-      years++;
+    int y = 0;
+    while (principal < desired) {
+      double gain = principal * interest;
+      double taxes = gain * tax;
+      principal += gain - taxes;
+      y++;
     }
-    return years;
-  }
-
-  private static double applyTax(double value, double tax) {
-    return value*(1-tax);
-  }
-
-  private static double interestPostTaxes(double value, double interest, double tax) {
-    return applyTax(value*(interest), tax);
+    return y;
   }
 }

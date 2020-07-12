@@ -12,15 +12,13 @@
 // part1:  c   d   w         = cdw
 // part2:    o   e   a r s   = oears
 
-//solution
-public class StringMerger {
-
+public class MergedStringChecker {
   public static boolean isMerge(String s, String part1, String part2) {
     if (s.isEmpty()) {
       return part1.isEmpty() && part2.isEmpty();
     }
 
-    if (part1.isEmpty() && part2.isEmpty()){
+    if (part1.isEmpty() && part2.isEmpty()) {
       return false;
     }
 
@@ -33,42 +31,6 @@ public class StringMerger {
     }
 
     return (s.charAt(0) == part1.charAt(0) || s.charAt(0) == part2.charAt(0))
-        && (
-        isMerge(s.substring(1), part1.substring(1), part2)
-            || isMerge(s.substring(1), part1, part2.substring(1)));
+        && (isMerge(s.substring(1), part1.substring(1), part2) || isMerge(s.substring(1), part1, part2.substring(1)));
   }
-
-  //others
-  public class StringMerger {
-  public static boolean isMerge(String s, String part1, String part2) {
-    if(s.length() != part1.length() + part2.length()) return false;
-    if(s.length() == 0) return true;
-    return (part1.length() > 0 && part1.charAt(0) == s.charAt(0) && isMerge(s.substring(1), part1.substring(1), part2)) ||
-            (part2.length() > 0 && part2.charAt(0) == s.charAt(0) && isMerge(s.substring(1), part1, part2.substring(1)));
-  }
-}
-
-public class StringMerger {
-
-    public static boolean isMerge(String s, String part1, String part2) {
-       if (part1 == part2 & !s.isEmpty()) return false;
-       
-       char[] ch = s.toCharArray();
-       char[] p1 = part1.toCharArray();
-       char[] p2 = part2.toCharArray();
-       int l = ch.length, l1 = p1.length, l2 = p2.length;
-       int n = 0, m = 0;
-       if (l == (l1 + l2)){
-         for (int i = 0; i < l; i++){
-           if (n < l1 && ch[i] == p1[n]) n++;
-           if (m < l2 && ch[i] == p2[m]) m++; 
-         }
-         if(l == n + m){
-           return true;
-         } else return false;
-         
-       } else return false;
-       
-    }
-
 }

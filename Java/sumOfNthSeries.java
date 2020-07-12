@@ -20,7 +20,8 @@ public class SumOfNthSeries {
 	public static String seriesSum(int n) {
 		float result = 1.0f;
 		float baseNum = 1.0f;
-		if (n <= 0) result = 0;
+		if (n <= 0)
+			result = 0;
 		else {
 			for (int i = 1; i < n; i++) {
 				baseNum = baseNum + 3;
@@ -28,28 +29,5 @@ public class SumOfNthSeries {
 			}
 		}
 		return String.format("%.2f", result);
-	}
-}
-
-// others
-public class NthSeries {
-
-	public static String seriesSum(int n) {
-
-		double sum = 0.0;
-		for (int i = 0; i < n; i++)
-			sum += 1.0 / (1 + 3 * i);
-
-		return String.format("%.2f", sum);
-
-	}
-}
-
-import java.util.stream.IntStream;
-
-public class NthSeries {
-
-	public static String seriesSum(int n) {
-		return String.format("%.2f", IntStream.range(0, n).mapToDouble(num -> 1.0 / (1 + num * 3)).sum());
 	}
 }

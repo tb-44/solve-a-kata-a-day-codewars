@@ -26,24 +26,22 @@
 
 public class LongestCommonSubSequence {
 
-	public static String lcs(String a, String b) {
-       int aString = a.length();
-	   int bString = b.length();
-	   int[][] ab = new int[aString + 1][bString + 1];
- 
-	    for(int i = 0; i <= aString; i++){
-		    for(int j = 0 ; j <= bString; j++){
-			    if(i == 0 || j == 0){
-				    ab[i][j] = 0;
-			    }
-                else if(a.charAt(i - 1) == b.charAt(j - 1)){
-				    ab[i][j] = 1 + ab[i - 1][j - 1];
-			    }
-                else { 
-				    ab[i][j] = Math.max(ab[i - 1][j], ab[i][j - 1]);
+	public static int lcs(String a, String b) {
+		int aString = a.length();
+		int bString = b.length();
+		int[][] ab = new int[aString + 1][bString + 1];
+
+		for (int i = 0; i <= aString; i++) {
+			for (int j = 0; j <= bString; j++) {
+				if (i == 0 || j == 0) {
+					ab[i][j] = 0;
+				} else if (a.charAt(i - 1) == b.charAt(j - 1)) {
+					ab[i][j] = 1 + ab[i - 1][j - 1];
+				} else {
+					ab[i][j] = Math.max(ab[i - 1][j], ab[i][j - 1]);
+				}
 			}
 		}
+		return ab[aString][bString];
 	}
- 
-	return ab[aString][bString];
 }
