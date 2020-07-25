@@ -43,31 +43,27 @@
 // Output: 1076
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.List;
 
 public class TimeToInformEmployees {
+
     public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
-        List<Integer>[] mgr = new List[n];
+        List<List<Integer>> subs = new ArrayList<>();
         for (int i = 0; i < n; i++)
-            mgr[i] = new ArrayList<>();
-        for (int i = 0; i < n; i++)
-            if (manager[i] != -1)
-                mgr[manager[i]].add(i);
-
-        Queue<int[]> q = new LinkedList<>();
-        q.offer(new int[] { headID, 0 });
-
-        int result = 0;
-        while (!q.isEmpty()) {
-            int[] top = q.poll();
-            int managerID = top[0], weight = top[1];
-            result = Math.max(weight, result);
-
-            for (int employee : mgr[managerID])
-                q.offer(new int[] { employee, weight + informTime[managerID] });
+            subs.add(new ArrayList<>());
+        for (int i = 0; i < manager.length; i++) {
+            if (manager[i] == -1)
+                continue;
+            subs.get(manager[i]).add(i);
         }
-        return result;
+        return dfs(subs, informTime, headID);
+    }
+
+    public int dfs(List<List<Integer>> subord, int[] informTime, int currID) {
+        int maxSubInfo = 0;
+        for (int sub : subord.get(currID)) {
+            maxSubInfo = Math.max(maxSubInfo, dfs(subord, informTime, sub));
+        }
+        return informTime[currID] + maxSubInfo;
     }
 }
