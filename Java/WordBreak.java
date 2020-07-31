@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+
 // Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
 
 // Note:
@@ -35,25 +39,26 @@
 // []
 
 public class WordBreak {
-    HashMap<String, LinkedList<String>> m = new HashMap<String, LinkedList<String>>();
-    public List<String> wordBreak(String s, List<String> wordDict) {
-        if (m.containsKey(s))
-		return m.get(s);
+	HashMap<String, LinkedList<String>> m = new HashMap<String, LinkedList<String>>();
 
-	    LinkedList<String> list = new LinkedList<String>();
-	        if (s.length() == 0) {
-		        list.add("");
-		    return list;
-	        }
-        
-	    for (String wd : wordDict) {
-		    if (s.startsWith(wd)) {
-			    List<String> sublist = wordBreak(s.substring(wd.length()), wordDict);
-			        for (String sub : sublist)
-				        list.add(wd + (sub.isEmpty() ? "" : " ") + sub);
-		    }
-	    }
-	    m.put(s, list);
-	    return list;
-    }
+	public LinkedList<String> wordBreak(String s, List<String> wordDict) {
+		if (m.containsKey(s))
+			return m.get(s);
+
+		LinkedList<String> list = new LinkedList<String>();
+		if (s.length() == 0) {
+			list.add("");
+			return list;
+		}
+
+		for (String wd : wordDict) {
+			if (s.startsWith(wd)) {
+				LinkedList<String> sublist = wordBreak(s.substring(wd.length()), wordDict);
+				for (String sub : sublist)
+					list.add(wd + (sub.isEmpty() ? "" : " ") + sub);
+			}
+		}
+		m.put(s, list);
+		return list;
+	}
 }
