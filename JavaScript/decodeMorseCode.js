@@ -83,3 +83,33 @@ const decodeMorse = (morseCode) => {
 // });
 
 // console.log(messageConverted.join(""));
+
+// JAVA SOLUTION
+// public class MorseCodeDecoder {
+//   public static String decode(String morseCode) {
+//     String result = new String();
+
+//     for (String word : morseCode.trim().split("   ")) {
+//       for (String w : word.trim().split(" ")) {
+//         result = result.concat(MorseCode.get(w));
+//       }
+//       result = result.concat(" ");
+//     }
+//     return result.substring(0, result.length() - 1);
+//   }
+// }
+
+// public class MorseCodeDecoder {
+//   public static String decode(String morseCode) {
+//     String[] words = morseCode.trim().split("   ");
+//     StringBuilder sb = new StringBuilder();
+//     for (String word: words) {
+//       String[] scode = word.split(" ");
+//       for (String sc: scode) {
+//         sb.append(MorseCode.get(sc));
+//       }
+//       sb.append(" ");
+//     }
+//     return sb.toString().trim();
+//   }
+// }
