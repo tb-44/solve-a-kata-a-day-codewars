@@ -19,7 +19,16 @@ public class AnagramCheck {
         for (int i = 0; i < n1; i++)
             if (str1[i] != str2[i])
                 return false;
-
         return true;
     }
 }
+
+// ANOTHER SOLUTION
+// if (s.length() != t.length()) {
+//         return false;
+//     }
+//     char[] s1 = s.toCharArray();
+//     char[] t1 = t.toCharArray();
+//     Arrays.sort(s1);
+//     Arrays.sort(t1);
+//     return Arrays.equals(s1, t1);
