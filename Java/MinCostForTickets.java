@@ -59,3 +59,69 @@ public class MinCostForTickets {
         return result;
     }
 }
+
+// class Solution {
+// int[] costs;
+// Integer[] memo;
+// Set<Integer> dayset;
+
+// public int mincostTickets(int[] days, int[] costs) {
+// this.costs = costs;
+// memo = new Integer[366];
+// dayset = new HashSet();
+
+// for (int d : days)
+// dayset.add(d);
+// return dp(1);
+// }
+
+// public int dp(int i) {
+// if (i > 365)
+// return 0;
+// if (memo[i] != null)
+// return memo[i];
+
+// int result;
+// if (dayset.contains(i)) {
+// result = Math.min(dp(i + 1) + costs[0], dp(i + 7) + costs[1]);
+// result = Math.min(result, dp(i + 30) + costs[2]);
+// } else {
+// result = dp(i + 1);
+// }
+
+// memo[i] = result;
+// return result;
+// }
+// }
+
+// dynamic programming formula:
+// dp(i)=min(dp(i+1)+costs[0],dp(i+7)+costs[1],dp(i+30)+costs[2])
+
+// Time Complexity:
+// O(W), where W = 365W = 365 is the maximum numbered day in your travel
+// plan.
+// Space Complexity: O(W).
+
+// class Solution {
+// public int mincostTickets(int[] days, int[] costs) {
+// boolean[] dayIncluded = new boolean[366];
+// for (int day : days) {
+// dayIncluded[day] = true;
+// }
+// int[] minCost = new int[366];
+// minCost[0] = 0;
+// for (int day = 1; day <= 365; ++day) {
+// if (!dayIncluded[day]) {
+// minCost[day] = minCost[day - 1];
+// continue;
+// }
+// int min;
+// min = minCost[day - 1] + costs[0];
+// min = Math.min(min, minCost[Math.max(0, day - 7)] + costs[1]);
+// min = Math.min(min, minCost[Math.max(0, day - 30)] + costs[2]);
+// minCost[day] = min;
+// }
+
+// return minCost[365];
+// }
+// }
