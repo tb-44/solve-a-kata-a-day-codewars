@@ -42,3 +42,27 @@ public class CheckStringCanBreakAnotherString {
         return result1 || result2;
     }
 }
+
+// class Solution {
+// public boolean checkIfCanBreak(String s1, String s2) {
+// char[] c1 = s1.toCharArray();
+// char[] c2 = s2.toCharArray();
+// Arrays.sort(c1);
+// Arrays.sort(c2);
+// int count = 0;
+// while (count < c1.length && c1[count] - c2[count] >= 0) {
+// count++;
+// }
+// if (count == c1.length) {
+// return true;
+// }
+// count = 0;
+// while (count < c2.length && c2[count] - c1[count] >= 0) {
+// count++;
+// }
+// if (count == c2.length) {
+// return true;
+// }
+// return false;
+// }
+// }
