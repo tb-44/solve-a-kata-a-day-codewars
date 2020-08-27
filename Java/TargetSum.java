@@ -25,7 +25,7 @@ public class TargetSum {
         for (int num : nums) {
             sum += num;
         }
-        int n = nums.length;
+
         if ((sum - S) % 2 != 0)
             return 0;
 

@@ -55,37 +55,46 @@
 // Number of Nodes will not exceed 1000.
 // 1 <= Node.val <= 10^5
 
-import java.util.Stack;
+import java.util.LinkedList;
 
-public class FlattenMultilevelDoubleLinkedList {
-    public int val;
-    public Node prev;
-    public Node next;
-    public Node child;
+class TreeNode {
 
-    public Node flatten(Node head) {
-        Stack<Node> stack = new Stack<>();
-        Node node = head, next = null;
-        while (node != null) {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-            if (node.child != null) {
-                if (node.next != null) {
-                    next = (Node) node.getNext();
-                    next.prev = null;
-                    stack.push(next);
-                }
-                node.next = node.child;
-                next.prev = node;
-                node.child = null;
-            }
+    TreeNode() {
+    }
 
-            if (node.next == null && stack.size() > 0) {
-                next = stack.pop();
-                node.next = next;
-                next.prev = node;
-            }
-            node = (Node) node.next;
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+class FlattenMultilevelDoubleLinkedList {
+    public void flatten(TreeNode root) {
+        LinkedList<TreeNode> list = new LinkedList<>();
+        TreeNode node = root;
+        flatTraversal(list, node);
+
+        for (int i = 1; i < list.size(); i++) {
+            root.left = null;
+            root.right = list.get(i);
+            root = root.right;
         }
-        return head;
+    }
+
+    private void flatTraversal(LinkedList<TreeNode> list, TreeNode node) {
+        if (node == null)
+            return;
+        list.add(node);
+        flatTraversal(list, node.left);
+        flatTraversal(list, node.right);
     }
 }

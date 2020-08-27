@@ -21,10 +21,12 @@
 
 // Definition for a Node.
 class Node {
+    public Node child = null;
     public int val;
     public Node left;
     public Node right;
     public Node next;
+    public Object prev;
 
     public Node() {
     }
@@ -38,6 +40,10 @@ class Node {
         left = _left;
         right = _right;
         next = _next;
+    }
+
+    public Node getNext() {
+        return null;
     }
 };
 
