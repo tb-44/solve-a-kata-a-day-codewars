@@ -17,17 +17,15 @@
 
 public class RepeatedSubstringPattern {
     public boolean repeatedSubstringPattern(String s) {
-        int r = s.length();
-        for (int i = r / 2; i >= 1; i--) {
-            if (r % i == 0) {
-                int m = r / i;
-                String subs = s.substring(0, i);
-                StringBuilder sb = new StringBuilder();
-                for (int j = 0; j < m; j++) {
-                    sb.append(subs);
-                }
-                if (sb.toString().equals(s))
+        int len = s.length();
+        for (int i = len / 2; i >= 1; i--) {
+            if (len % i == 0) {
+                String sub = s.substring(0, i);
+                int t = len / i;
+                if (sub.repeat(t).equals(s)) {
                     return true;
+                }
+
             }
         }
         return false;
